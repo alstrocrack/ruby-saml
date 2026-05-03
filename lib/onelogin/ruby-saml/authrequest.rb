@@ -46,7 +46,7 @@ module OneLogin
       end
 
       # Creates the Get parameters for the request.
-      # @param settings [OneLogin::RubySaml::Settings|nil] Toolkit settings
+      # @param settings [OneLogin::RubySaml::Settings] Toolkit settings
       # @param params [Hash] Some extra parameters to be added in the GET for example the RelayState
       # @return [Hash] Parameters
       #
