@@ -29,7 +29,7 @@ module OneLogin
       end
 
       # Creates the AuthNRequest string.
-      # @param settings [OneLogin::RubySaml::Settings|nil] Toolkit settings
+      # @param settings [OneLogin::RubySaml::Settings] Toolkit settings
       # @param params [Hash] Some extra parameters to be added in the GET for example the RelayState
       # @return [String] AuthNRequest string that includes the SAMLRequest
       #
