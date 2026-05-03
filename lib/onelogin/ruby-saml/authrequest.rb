@@ -95,7 +95,7 @@ module OneLogin
       end
 
       # Creates the SAMLRequest String.
-      # @param settings [OneLogin::RubySaml::Settings|nil] Toolkit settings
+      # @param settings [OneLogin::RubySaml::Settings] Toolkit settings
       # @return [String] The SAMLRequest String.
       #
       def create_authentication_xml_doc(settings)
