@@ -85,7 +85,7 @@ class SloLogoutresponseTest < Minitest::Test
 
     it "raises error when the settings is nil" do
       err = assert_raises ArgumentError do
-        OneLogin::RubySaml::SloLogoutresponse.new.create(nil, logout_request.id)
+        OneLogin::RubySaml::SloLogoutresponse.new.create(nil)
       end
       assert_match(/settings should not be nil/, err.message)
     end
