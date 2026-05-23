@@ -34,6 +34,8 @@ module OneLogin
       # @return [String] AuthNRequest string that includes the SAMLRequest
       #
       def create(settings, params = {})
+        raise ArgumentError, "Invalid settings, settings should not be nil!" if settings.nil?
+
         params = create_params(settings, params)
         params_prefix = (settings.idp_sso_service_url =~ /\?/) ? '&' : '?'
         saml_request = CGI.escape(params.delete("SAMLRequest"))
@@ -51,6 +53,8 @@ module OneLogin
       # @return [Hash] Parameters
       #
       def create_params(settings, params={})
+        raise ArgumentError, "Invalid settings, settings should not be nil!" if settings.nil?
+
         # The method expects :RelayState but sometimes we get 'RelayState' instead.
         # Based on the HashWithIndifferentAccess value in Rails we could experience
         # conflicts so this line will solve them.
@@ -99,6 +103,8 @@ module OneLogin
       # @return [String] The SAMLRequest String.
       #
       def create_authentication_xml_doc(settings)
+        raise ArgumentError, "Invalid settings, settings should not be nil!" if settings.nil?
+
         document = create_xml_document(settings)
         sign_document(document, settings)
       end
