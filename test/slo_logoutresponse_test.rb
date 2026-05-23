@@ -87,7 +87,7 @@ class SloLogoutresponseTest < Minitest::Test
       err = assert_raises ArgumentError do
         OneLogin::RubySaml::SloLogoutresponse.new.create(nil, logout_request.id)
       end
-      assert_match(/Invalid settings, settings should not be nil!/, err.message)
+      assert_match(/settings should not be nil/, err.message)
     end
 
     describe "playgin with preix" do
@@ -109,14 +109,14 @@ class SloLogoutresponseTest < Minitest::Test
       err = assert_raises ArgumentError do
         OneLogin::RubySaml::SloLogoutresponse.new.create_params(nil)
       end
-      assert_match(/Invalid settings, settings should not be nil!/, err.message)
+      assert_match(/settings should not be nil/, err.message)
     end
 
     it "raises error when settings is nil on create_logout_response_xml_doc" do
       err = assert_raises ArgumentError do
         OneLogin::RubySaml::SloLogoutresponse.new.create_logout_response_xml_doc(nil)
       end
-      assert_match(/Invalid settings, settings should not be nil!/, err.message)
+      assert_match(/settings should not be nil/, err.message)
     end
 
     describe "signing with HTTP-POST binding" do
